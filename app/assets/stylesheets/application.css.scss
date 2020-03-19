@@ -1,0 +1,34 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ // Import Custom SB Admin 2 Variables (Overrides Default Bootstrap Variables)
+@import "scss/variables.scss";
+
+// Import Bootstrap
+@import "../vendor/bootstrap/scss/bootstrap.scss";
+
+// Import Custom SB Admin 2 Mixins and Components
+@import "scss/mixins.scss";
+@import "scss/global.scss";
+@import "scss/utilities.scss";
+
+// Custom Components
+@import "scss/dropdowns.scss";
+@import "scss/navs.scss";
+@import "scss/buttons.scss";
+@import "scss/cards.scss";
+@import "scss/charts.scss";
+@import "scss/login.scss";
+@import "scss/error.scss";
+@import "scss/footer.scss";
