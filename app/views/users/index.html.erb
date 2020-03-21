@@ -1,8 +1,55 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Heading -->
+<div class="row">
 
-<h1>Users</h1>
+  <div class="col-xl-4 col-lg-5">
+      <h1 class="h3 mb-2 text-gray-800">Utilisateurs</h1>
+  </div>
+  <div class="col-xl-4 col-lg-5">
+    <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+      <span class="text"><%= @users.count%></span>
+    </a>
+  </div>
+  <div class="col-xl-4 col-lg-5">
+    <a href="<%= new_user_path %>" class="btn btn-light btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+      <span class="text">Nouveau utilisateur</span>
+    </a>
+  </div>
 
-<table>
+
+  </div>
+<br>
+    <!-- Collapsable Card Example -->
+<div class="card shadow mb-4">
+  <!-- Card Header - Accordion -->
+  <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+    <h6 class="m-0 font-weight-bold text-primary">Statistique</h6>
+  </a>
+  <!-- Card Content - Collapse -->
+  <div class="collapse show" id="collapseCardExample">
+    <div class="card-body">
+
+             <%= pie_chart User.group(:role).count %>
+
+
+
+</div>
+    </div>
+  </div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Utilisateurs</h6>
+  </div>
+  <div class="card-body">
+
+    <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,7 +60,9 @@
       <th>Cite</th>
       <th>Country</th>
       <th>Role</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -28,14 +77,14 @@
         <td><%= user.cite %></td>
         <td><%= user.country %></td>
         <td><%= user.role %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-success btn-lg" %></td>
+        <td><%= link_to '', edit_user_path(user),class:"fas fa-edit fa-2x btn-primary btn-lg" %></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</div>
+</div>
+</div>
