@@ -30,7 +30,7 @@ gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem "chartkick"
-
+gem 'font-awesome-rails'
 gem 'leaflet-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
