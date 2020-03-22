@@ -1,44 +1,148 @@
-<p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-body">
+    <div class="card-header ">
+        <h1> Nom d'utilisateur: <%= @user.name%> </h1>
+    </div>
+    <div class="panel-body">
+        <hr>
+        <%= link_to '', edit_user_path(@user),class:"fas fa-edit fa-2x btn-primary btn-lg" %> |
+        <%= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> 
+        
+        <hr>
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nom</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.name %></div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Email</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.email %></div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @user.date_of_birth %>
-</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Role</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.role %></div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<p>
-  <strong>Adress:</strong>
-  <%= @user.adress %>
-</p>
+        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Date of birth</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.date_of_birth %></div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Adress</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.adress %></div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Cite:</strong>
-  <%= @user.cite %>
-</p>
+      <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Cite</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.cite %></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @user.country %>
-</p>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Country</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.country %></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
