@@ -9,28 +9,5 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- 
  *= require leaflet
  */
- @import "font-awesome";
- // Import Custom SB Admin 2 Variables (Overrides Default Bootstrap Variables)
-@import "scss/variables.scss";
-
-// Import Bootstrap
-@import "./vendor/bootstrap/scss/bootstrap.scss";
-
-// Import Custom SB Admin 2 Mixins and Components
-@import "scss/mixins.scss";
-@import "scss/global.scss";
-@import "scss/utilities.scss";
-
-// Custom Components
-@import "scss/dropdowns.scss";
-@import "scss/navs.scss";
-@import "scss/buttons.scss";
-@import "scss/cards.scss";
-@import "scss/charts.scss";
-@import "scss/login.scss";
-@import "scss/error.scss";
-@import "scss/footer.scss";
-
