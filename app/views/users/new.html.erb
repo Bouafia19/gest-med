@@ -1,5 +1,59 @@
-<h1>New User</h1>
+<div class="card">
+  <div class="card-body ">
+    <div class="card-header">
+        <h1 style="color: #17a2b8" align="center">Nouvel utilisateur</h1>
+    </div>
+        <hr>
+        <%= link_to 'Back', users_path,class:"btn btn-md btn-warning" %>
+        <hr>
 
-<%= render 'form', user: @user %>
 
-<%= link_to 'Back', users_path %>
+
+        <%= form_for(@user, html: {class: "user"}) do |f| %>
+
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <br>
+          <div class="field" align="center">
+            <%= f.label :nom %>
+            <%= f.text_field :name, id: :user_name ,class:"form-control form-control-lg col-4"%>
+          </div>
+          <br>
+          <div class="field" align="center">
+            <%= f.label :email %>
+            <%= f.text_field :email, id: :user_email ,class:"form-control form-control-lg col-4"%>
+          </div>
+          <br>
+          <div class="field" align="center">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password",class:"form-control form-control-user col-4" %>
+          </div>
+          <hr>
+          <div class="field" align="center">
+            <%= f.label :role %><br />
+            <%= f.select :role, options_for_select([["Admin","admin"],["Utilisateur","utilisateur"],["Public","public"]]),{},class:"form-control form-control-lg col-4"%>
+          </div>
+          <br>
+          
+          <hr>
+          <div class="form-group" align="right">
+            <%= f.submit class:"btn btn-md btn-success" %>
+          </div>
+          <br>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>

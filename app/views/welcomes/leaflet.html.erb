@@ -9,13 +9,10 @@
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""/>
 
-
-
 <!-- Load Esri Leaflet from CDN -->
 <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js"
         integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ=="
         crossorigin=""></script>
-
 
 <!-- Load Esri Leaflet Geocoder from CDN -->
 <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.14/dist/esri-leaflet-geocoder.css"
@@ -27,7 +24,31 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
+<style>
+  .chart-container {
+    height: 245px;
+    width: 245px;
+  }
 
+  #info-pane {
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    z-index: 400;
+    padding: 1em;
+    background: white;
+  }
+</style>
+
+<style>
+  body { margin:0; padding:0; }
+  #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+</style>
+
+
+<style>
+  #map { height: 800px; }
+</style>
 
 
 
@@ -58,7 +79,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-
+<%= javascript_include_tag('lib/leaflet.ajax.min.js') %>
 <style>
 
   #info-pane {
@@ -92,28 +113,76 @@
 
 
   var map = L.map('map',{
-      center: [28.0339, 1.6596],
-      zoom: 5,
-      //fullscreenControl: true,
-      measureControl: true
-
-     // drawControl: true
-
+      center: [36.1700, 5.5199],
+      zoom: 12
   });
   var tileUrl = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+function popUp(features,layer) {
+        layer.bindPopup(
+            'Ville :  ' + features.properties.ville
+            //+'<br>'+ '<img src="'+ features.properties.photo +'" style="width:300px;height:200px;">'
+        );
+
+    }
+
+    function colors(hello){
+        return hello == null ? '#8856a7' :
+                                    '#2c7fb8';
+    }
+
+    function style(features) {
+        return {
+          iconUrl: '../marker-icon.png'
+    
+        };
+    }
+
+    var greenIcon = L.icon({
+      iconUrl: '../marker-icon.png',
+      
+      iconSize:     [38, 95], 
+      iconAnchor:   [22, 94], 
+      popupAnchor:  [-3, -76] 
+  });
+
+var geojsonda1 = new L.GeoJSON.AJAX('../zone_ind_3.json',{onEachFeature: popUp,style: style });
+
+var geojsonda2 = new L.GeoJSON.AJAX('../med.json', {icon: greenIcon});
+
+var geojsonda3 = new L.GeoJSON.AJAX('../spec.json', {icon: greenIcon});
+
+var cities  = L.layerGroup([geojsonda1,geojsonda2,geojsonda3]);
+
+
+var yes = {
+    "ALL ZI SETIF": cities,
+
+};
+
+var geo = {
+    "ZI Ouled saber": geojsonda1,
+    "med": geojsonda2,
+    "spec ": geojsonda3,
+    "ALL ZI SETIF": cities
+    //"Test filter": promise
+
+};
+
+
+L.control.layers(yes, geo,{position :'topright'}).addTo(map);
 
 
 
-L.marker([36.19112, 5.41373]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
+//L.marker([36.19112, 5.41373]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
 
-L.marker([36.763056, 3.050556]).bindPopup('<p>Wilaya<br />Alger</p>').openPopup().addTo(map);
+//L.marker([36.763056, 3.050556]).bindPopup('<p>Wilaya<br />Alger</p>').openPopup().addTo(map);
 
-L.marker([36.365, 6.614722]).bindPopup('<p>Wilaya<br />Constantine</p>').openPopup().addTo(map);
+//L.marker([36.365, 6.614722]).bindPopup('<p>Wilaya<br />Constantine</p>').openPopup().addTo(map);
 
-L.marker([27.870924, -0.285634]).bindPopup('<p>Wilaya<br />Adrar</p>').openPopup().addTo(map);
+//L.marker([27.870924, -0.285634]).bindPopup('<p>Wilaya<br />Adrar</p>').openPopup().addTo(map);
 
 
 

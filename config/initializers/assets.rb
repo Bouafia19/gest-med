@@ -30,3 +30,7 @@ Rails.application.config.assets.precompile += %w( js/demo/chart-pie-demo.js )
 Rails.application.config.assets.precompile += %w( datatables/jquery.dataTables.min.js )
 Rails.application.config.assets.precompile += %w( datatables/dataTables.bootstrap4.min.js )
 Rails.application.config.assets.precompile += %w( js/demo/datatables-demo.js )
+
+
+
+Rails.application.config.assets.precompile += %w( lib/leaflet.ajax.min.js )

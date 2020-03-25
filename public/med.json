@@ -1,0 +1,7 @@
+{"type": "FeatureCollection",
+  "name": "ZI_OULED_SABER_0",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    { "type": "Feature", "properties": { "ville": "setif" }, "geometry": { "type": "Point", "coordinates": [36.19112, 5.41373] } }
+  ]
+}
