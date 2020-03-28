@@ -6,8 +6,8 @@
     <div class="panel-body">
         <hr>
         <%= link_to '', edit_user_path(@user),class:"fas fa-edit fa-2x btn-primary btn-lg" %> |
-        <%= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> 
-        
+        <%= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> |
+        <%= link_to '', "change_passd/#{@user.id}" ,class:"fas fa-pen-nib fa-2x  btn-danger btn-lg"%>
         <hr>
         <div class="col-xl-3 col-md-6 mb-4">
           <div class="card border-left-warning shadow h-100 py-2">

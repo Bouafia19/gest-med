@@ -19,7 +19,7 @@
   <%= stylesheet_link_tag "vendor/datatables/dataTables.bootstrap4.min.css" %>
   </head>
 
-  <body>
+  <body id="page-top">
   <% if user_signed_in? %>
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -329,21 +329,35 @@
 
         <%end %>
         <!-- Begin Page Content -->
-  <div class="container-fluid">
-  <div class="col-md-12">
+<div class="container-fluid">
+  <br>
+  <% if notice %>
+      <div class="col-md-12 alert alert-info">
+        <p id="notice"><%= notice %></p>
+      </div>
+      
+    <%end%>
+    <% if alert %>  
+      <div class="col-md-12 alert alert-danger">
+        <p id="alert"><%= alert %></p>
+      </div>   
+      
+    <%end%>
+    
+ 
     <%= yield %>
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
        <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bouafia Khaled 2020</span>
+            <span>Copyright &copy; Elite Soft 2020</span>
           </div>
         </div>
       </footer>
     <!-- End of Footer -->
-
-  </div>
+</div>
+  
   <!-- End of Content Wrapper -->
 
 </div>
@@ -387,7 +401,7 @@
 <%= javascript_include_tag('js/demo/chart-pie-demo.js' ) %>
 
 <%= javascript_include_tag('datatables/jquery.dataTables.min.js') %>
-  <%= javascript_include_tag('datatables/dataTables.bootstrap4.min.js') %>
-  <%= javascript_include_tag('js/demo/datatables-demo.js') %>
+<%= javascript_include_tag('datatables/dataTables.bootstrap4.min.js') %>
+<%= javascript_include_tag('js/demo/datatables-demo.js') %>
   </body>
 </html>

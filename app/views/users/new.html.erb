@@ -4,7 +4,7 @@
         <h1 style="color: #17a2b8" align="center">Nouvel utilisateur</h1>
     </div>
         <hr>
-        <%= link_to 'Back', users_path,class:"btn btn-md btn-warning" %>
+        <%= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg" %>
         <hr>
 
 
@@ -23,37 +23,55 @@
             </div>
           <% end %>
           <br>
-          <div class="field" align="center">
+          <div class="form-group" align="center">
             <%= f.label :nom %>
             <%= f.text_field :name, id: :user_name ,class:"form-control form-control-lg col-4"%>
           </div>
-          <br>
-          <div class="field" align="center">
+          
+          <div class="form-group" align="center">
             <%= f.label :email %>
             <%= f.text_field :email, id: :user_email ,class:"form-control form-control-lg col-4"%>
           </div>
-          <br>
-          <div class="field" align="center">
-            <%= f.label :password %><br />
+          
+          <div class="form-group" align="center">
+            <%= f.label :password %>
             <%= f.password_field :password, autocomplete: "current-password",class:"form-control form-control-user col-4" %>
           </div>
-          <hr>
-          <div class="field" align="center">
-            <%= f.label :role %><br />
+
+          <div class="form-group" align="center">
+            <%= f.label :date_of_birth %>
+            <%= f.date_field :date_of_birth ,class:"form-control form-control-lg col-4"%>
+          </div>
+
+            <div class="form-group" align="center">
+              <%= f.label :adress %>
+              <%= f.text_area :adress ,class:"form-control form-control-lg col-4"%>
+            </div>
+
+            <div class="form-group" align="center">
+              <%= f.label :cite %>
+              <%= f.text_field :cite ,class:"form-control form-control-lg col-4" %>
+            </div>
+
+            <div class="form-group" align="center">
+              <%= f.label :country %>
+              <%= f.text_field :country ,class:"form-control form-control-lg col-4" %>
+            </div>
+
+          <div class="form-group" align="center">
+            <%= f.label :role %>
             <%= f.select :role, options_for_select([["Admin","admin"],["Utilisateur","utilisateur"],["Public","public"]]),{},class:"form-control form-control-lg col-4"%>
           </div>
-          <br>
           
           <hr>
-          <div class="form-group" align="right">
-            <%= f.submit class:"btn btn-md btn-success" %>
+          <div class="form-group" align="center">
+            <%= f.submit class:"btn btn-success btn-user btn-block col-4" %>
           </div>
-          <br>
+          
 
         <% end %>
 
       </div>
     </div>
   </div>
-</div>
 </div>
