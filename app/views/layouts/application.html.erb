@@ -126,6 +126,17 @@
           <span>Leaflet</span></a>
       </li>
 
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="<%= patients_path %>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Patient</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= mailbox_inbox_path %>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Boites aux lettres</span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -133,7 +144,16 @@
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
+      
+      
+      <hr class="sidebar-divider d-none d-md-block">
 
+      <div class="sidebar-heading text-center">
+        Copyright &copy; Elite Soft 2020
+      </div>
+
+    
+ 
     </ul>
     <!-- End of Sidebar -->
 
@@ -330,32 +350,21 @@
         <%end %>
         <!-- Begin Page Content -->
 <div class="container-fluid">
-  <br>
-  <% if notice %>
+    <% if notice %>
       <div class="col-md-12 alert alert-info">
         <p id="notice"><%= notice %></p>
       </div>
-      
     <%end%>
+
     <% if alert %>  
       <div class="col-md-12 alert alert-danger">
         <p id="alert"><%= alert %></p>
       </div>   
-      
     <%end%>
-    
- 
-    <%= yield %>
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-       <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Elite Soft 2020</span>
-          </div>
-        </div>
-      </footer>
-    <!-- End of Footer -->
+</div>
+<div class="container-fluid">
+    <%= yield %> 
 </div>
   
   <!-- End of Content Wrapper -->

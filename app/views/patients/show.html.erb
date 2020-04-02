@@ -1,0 +1,114 @@
+<div class="card">
+
+    <div class="card-body">
+     <h1> <%= @patient.name%> </h1>
+      <hr>
+<%= link_to '', edit_patient_path(@patient) ,class:"fas fa-tv fa-2x  btn-primary btn-lg"%> |
+<%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
+<br>
+      <hr>
+
+
+    <br>
+
+<div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-3 col-lg-4">
+          <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">FICHE TECHNIQUE</h6>
+              <div class="dropdown no-arrow">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown-header">Dropdown Header:</div>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @patient.date_of_birth %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @patient.sex %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @patient.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @patient.country %>
+</p>
+
+<p>
+  <strong>Document data:</strong>
+  <%= @patient.document_data %>
+</p>
+ </div>
+          </div>
+        </div>
+ <div class="col-xl-9 col-lg-10">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">DOSSIER ADMINISTRATIF</h6>
+                    <div class="dropdown no-arrow">
+                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Dropdown Header:</div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+              <div class="col-sm-12">
+                <div class="panel panel-success">
+                  <div class="panel-body">
+                    <%if @patient.document_file_name != nil %>
+                      <iframe src="<%= @patient.document %>" width="1150" height="1000"></iframe>
+                    <%else%>
+                      <p class="text-center"><font size="4" >There is no file attached to this investisseur</font></p>
+                    <%end%>
+
+                  </div>
+                </div>
+              </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
