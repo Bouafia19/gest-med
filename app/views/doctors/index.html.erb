@@ -1,24 +1,24 @@
-
 <!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-2 text-gray-800">Utilisateurs</h1>
-      
-    <a href="#" class="btn btn-info btn-icon-split">
+
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
+
+      <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-info-circle"> Total</i>
                     </span>
-      <span class="text"><%= @users.count%></span>
+      <span class="text"><%= @doctors.count%></span>
     </a>
-  
-    <a href="<%= new_user_path %>" class="btn btn-primary btn-icon-split">
+
+    <a href="<%= new_doctor_path %>" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-arrow-right"></i>
                     </span>
-      <span class="text">Nouveau utilisateur</span>
+      <span class="text">Nouveau Doctor</span>
     </a>
+  </div>
   
-</div>
-
+ 
 
 <!-- Content Row -->
 
@@ -29,7 +29,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Utilisateurs</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -43,18 +43,19 @@
                     </div>
                   </div>
                 </div>
-<!-- Card Body -->
-<div class="card-body" >
-  <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
+                <!-- Card Body -->
+                <div class="card-body">
+                  
+                  <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
       <th>Date of birth</th>
-      <th>Adress</th>
-      <th>Cite</th>
+      <th>Sex</th>
+      <th>Specialist</th>
+      <th>Address</th>
+      <th>City</th>
       <th>Country</th>
-      <th>Role</th>
       <th></th>
       <th></th>
       <th></th>
@@ -62,23 +63,24 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @doctors.each do |doctor| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.date_of_birth %></td>
-        <td><%= user.adress %></td>
-        <td><%= user.cite %></td>
-        <td><%= user.country %></td>
-        <td><%= user.role %></td>
-        <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-success btn-lg" %></td>
-        <td><%= link_to '', edit_user_path(user),class:"fas fa-edit fa-2x btn-primary btn-lg" %></td>
-        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
+        <td><%= doctor.name %></td>
+        <td><%= doctor.date_of_birth %></td>
+        <td><%= doctor.sex %></td>
+        <td><%= doctor.specialist %></td>
+        <td><%= doctor.address %></td>
+        <td><%= doctor.city %></td>
+        <td><%= doctor.country %></td>
+        <td><%= link_to '', doctor ,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
+        <td><%= link_to '', edit_doctor_path(doctor),class:"fas fa-edit fa-2x btn-primary btn-lg" %></td>
+        <td><%= link_to '', doctor, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
       </tr>
     <% end %>
   </tbody>
-  </table>
-</div>
+</table>
+
+ </div>
               </div>
             </div>
 
@@ -103,8 +105,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                   <%= pie_chart User.group(:role).count %>
-                  
+                  <%= pie_chart Doctor.group(:city).count %>
                 </div>
               </div>
             </div>
@@ -112,7 +113,3 @@
 
 
 
-
-
-
-   

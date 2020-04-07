@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+      <div class="card-header ">
+
+        <h1> Editing Doctor <%= @doctor.name%> </h1>
+      </div>
+      <div class="panel-body">
+      <hr>
+      <%= link_to '', @doctor ,class:"fas fa-tv fa-2x  btn-success btn-lg" %> |
+<%= link_to '', doctors_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
+
+<hr>
+
+<%= render 'form', doctor: @doctor %>
+</div>
+     <div>
+</div>
+

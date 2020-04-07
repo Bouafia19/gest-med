@@ -4,7 +4,8 @@
      <h1> <%= @patient.name%> </h1>
       <hr>
 <%= link_to '', edit_patient_path(@patient) ,class:"fas fa-tv fa-2x  btn-primary btn-lg"%> |
-<%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
+<%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> 
+
 <br>
       <hr>
 
@@ -33,40 +34,58 @@
               </div>
             </div>
             <div class="card-body">
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Name</i>
+                    </span>
+                    <span class="text"><%= @patient.name %></span>
+                  </a>
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @patient.date_of_birth %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Date of birth</i>
+                    </span>
+                    <span class="text"><%= @patient.date_of_birth %></span>
+                  </a>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @patient.sex %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Sex</i>
+                    </span>
+                    <span class="text"><%= @patient.sex %></span>
+                  </a>
 
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Address</i>
+                    </span>
+                    <span class="text"><%= @patient.address %></span>
+                  </a>
 
-<p>
-  <strong>City:</strong>
-  <%= @patient.city %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>City</i>
+                    </span>
+                    <span class="text"><%= @patient.city %></span>
+                  </a>
 
-<p>
-  <strong>Country:</strong>
-  <%= @patient.country %>
-</p>
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Country</i>
+                    </span>
+                    <span class="text"><%= @patient.country %></span>
+                  </a>
 
-<p>
-  <strong>Document data:</strong>
-  <%= @patient.document_data %>
-</p>
+
+
+
+
  </div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'doctors/search'
+  resources :doctors
   resources :patients
   root 'welcomes#index'
   resources :users
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   get 'welcomes/leaflet'
   devise_for :users ,only: :session , path: 'session',path_name: {sign_in:'login',sign_out: 'logout'}
   get   'users/change_passd/:id', to: 'users#change_passd'
-
+  
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent

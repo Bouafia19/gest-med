@@ -1,0 +1,52 @@
+<%= form_with(model: doctor, local: true, html: {class: "user"}) do |form| %>
+  <% if doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doctor.errors.count, "error") %> prohibited this doctor from being saved:</h2>
+
+      <ul>
+      <% doctor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" align="center">
+    <%= form.label :name %>
+    <%= form.text_field :name ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :date_of_birth %>
+    <%= form.date_field :date_of_birth ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :sex %>
+    <%= form.text_field :sex ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :specialist %>
+    <%= form.text_field :specialist ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :address %>
+    <%= form.text_area :address ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :city %>
+    <%= form.text_field :city ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :country %>
+    <%= form.text_field :country ,class:"form-control form-control-lg col-4"%>
+  </div>
+
+  <div class="form-group" align="center">
+    <%= form.submit class:"btn btn-primary btn-user btn-block col-4"%>
+  </div>
+<% end %>

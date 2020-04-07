@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 #gem 'image_processing'
 gem "paperclip"
 gem 'mailboxer'
+gem 'activerecord-postgis-adapter'
+
 #gem "shrine"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
