@@ -72,7 +72,8 @@
 
 <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 
-
+<%= stylesheet_link_tag "lib/leaflet-search.css" %>
+<%= javascript_include_tag('lib/leaflet-search.js') %>
 
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
@@ -123,61 +124,38 @@
 
 function popUp(features,layer) {
         layer.bindPopup(
-            'Ville :  ' + features.properties.ville
+            'Nom :  ' + features.properties.name
             //+'<br>'+ '<img src="'+ features.properties.photo +'" style="width:300px;height:200px;">'
         );
 
     }
 
-    function colors(hello){
-        return hello == null ? '#8856a7' :
-                                    '#2c7fb8';
-    }
-
-    function style(features) {
-        return {
-          iconUrl: '../marker-icon.png'
     
-        };
-    }
 
-    var greenIcon = L.icon({
-      iconUrl: '../marker-icon.png',
-      
-      iconSize:     [38, 95], 
-      iconAnchor:   [22, 94], 
-      popupAnchor:  [-3, -76] 
-  });
+var geojsonda2 = new L.GeoJSON.AJAX('../med.json',{onEachFeature: popUp});
 
-var geojsonda1 = new L.GeoJSON.AJAX('../zone_ind_3.json',{onEachFeature: popUp,style: style });
 
-var geojsonda2 = new L.GeoJSON.AJAX('../med.json', {icon: greenIcon});
 
-var geojsonda3 = new L.GeoJSON.AJAX('../spec.json', {icon: greenIcon});
-
-var cities  = L.layerGroup([geojsonda1,geojsonda2,geojsonda3]);
+var cities  = L.layerGroup([geojsonda2]);
 
 
 var yes = {
-    "ALL ZI SETIF": cities,
+    "ALL": cities,
 
 };
 
 var geo = {
-    "ZI Ouled saber": geojsonda1,
-    "med": geojsonda2,
-    "spec ": geojsonda3,
-    "ALL ZI SETIF": cities
-    //"Test filter": promise
-
+    
+    "MEDICAL": geojsonda2,
+    "ALL": cities
+    
 };
 
 
 L.control.layers(yes, geo,{position :'topright'}).addTo(map);
 
 
-
-//L.marker([36.19112, 5.41373]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
+//L.marker([36.105708, 5.561576]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
 
 //L.marker([36.763056, 3.050556]).bindPopup('<p>Wilaya<br />Alger</p>').openPopup().addTo(map);
 

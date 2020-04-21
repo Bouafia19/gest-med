@@ -1,7 +1,70 @@
-{"type": "FeatureCollection",
-  "name": "ZI_OULED_SABER_0",
-  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+{
+  "type": "FeatureCollection",
   "features": [
-    { "type": "Feature", "properties": { "ville": "setif" }, "geometry": { "type": "Point", "coordinates": [36.19112, 5.41373] } }
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "bouafia khaled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.407676696777344,
+          36.19718753045534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "bouafia douadi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.395832061767578,
+          36.19261594346773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "chaima"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.427761077880859,
+          36.19372423149001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "hamza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.418491363525391,
+          36.19663341291529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "salah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.41351318359375,
+          36.183610521812476
+        ]
+      }
+    }
   ]
 }

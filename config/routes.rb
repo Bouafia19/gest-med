@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'doctors/search'
+  get 'patients/search'
   resources :doctors
   resources :patients
   root 'welcomes#index'
@@ -23,5 +24,7 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+  get "*path", to: redirect("/404")
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

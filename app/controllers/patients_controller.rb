@@ -7,6 +7,10 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
+  def search
+    @patien = Patient.where(['city LIKE ? AND sex LIKE ?', "%#{params[:city]}%","%#{params[:sex]}%"])
+  end
+
   # GET /patients/1
   # GET /patients/1.json
   def show

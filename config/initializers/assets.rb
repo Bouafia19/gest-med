@@ -34,3 +34,5 @@ Rails.application.config.assets.precompile += %w( js/demo/datatables-demo.js )
 
 
 Rails.application.config.assets.precompile += %w( lib/leaflet.ajax.min.js )
+Rails.application.config.assets.precompile += %w( lib/leaflet-search.css )
+Rails.application.config.assets.precompile += %w( lib/leaflet-search.js )
