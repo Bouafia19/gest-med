@@ -1,4 +1,9 @@
 class Doctor < ApplicationRecord
+    has_many :consultings
+    has_many :patients, through: :consultings
+
+    scope :all_except, ->(s) { where.not(id: s) }
+    
     after_initialize :set_defaults 
 
     geocoded_by :address

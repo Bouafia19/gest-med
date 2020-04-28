@@ -3,37 +3,58 @@
     <div class="card-body">
      <h1> <%= @patient.name%> </h1>
       <hr>
-<%= link_to '', edit_patient_path(@patient) ,class:"fas fa-tv fa-2x  btn-primary btn-lg"%> |
-<%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> 
+          <%= link_to '', edit_patient_path(@patient) ,class:"fas fa-tv fa-2x  btn-primary btn-lg"%> |
+          <%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> |
+          <a class="fa fa-medkit fa-2x  btn-info btn-lg" data-toggle="modal" href="#betaModal"></a>
+                  <div id="betaModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <h4 class="modal-title">Add Consultation</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+
+                    <%= form_tag(patients_add_consulting_url, {:method => :post}) do %>
+                        <%= hidden_field_tag :id, @patient.id %>
+                        <div class="form-group">
+                          <strong>Doctors:</strong>
+                          <%= select_tag :doctor_id, options_for_select(Doctor.all_except(@cont_sel.map(&:doctor_id)).map { |s| [s.name, s.id] }.compact), { prompt: "select doctor", class: 'form-control',:required => true} %>
+                        </div>
+                        <div class="form-group">
+                          <strong>Avis:</strong>
+                          <%= text_area_tag :avis,nil,{class:"form-control" ,placeholder:"Tape avis in here...",:required => true}%>
+                        </div>
+                        <div class="form-group">
+                          <br>
+                          <%= submit_tag 'Create', class: 'btn btn-success' %>
+                        </div>
+                    <% end %>
+                  </div>
+                        </div>
+                        <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
 
 <br>
-      <hr>
+<hr>
+<br>
 
-
-    <br>
-
-<div class="row">
-
-        <!-- Area Chart -->
-        <div class="col-xl-3 col-lg-4">
-          <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-              <h6 class="m-0 font-weight-bold text-primary">FICHE TECHNIQUE</h6>
-              <div class="dropdown no-arrow">
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+ <!-- Collapsable Card Example -->
+              <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-primary">Fiche Technique</h6>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                  <div class="dropdown-header">Dropdown Header:</div>
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
+                <!-- Card Content - Collapse -->
+                <div class="collapse show" id="collapseCardExample">
+                  <div class="card-body">
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
@@ -81,53 +102,91 @@
                     </span>
                     <span class="text"><%= @patient.country %></span>
                   </a>
-
-
-
-
-
- </div>
+            </div>
           </div>
         </div>
- <div class="col-xl-9 col-lg-10">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">DOSSIER ADMINISTRATIF</h6>
-                    <div class="dropdown no-arrow">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+ 
+
+
+
+
+                  <!-- Collapsable Card Example -->
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample1" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample1">
+                      <h6 class="m-0 font-weight-bold text-primary">Doussier Medical</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse show" id="collapseCardExample1">
+                      <div class="card-body">
+                        <%if @patient.document_file_name != nil %>
+                          <iframe src="<%= @patient.document %>" width="1150" height="1000"></iframe>
+                        <%else%>
+                          <p class="text-center"><font size="4" >There is no file attached to this patient</font></p>
+                        <%end%>
                       </div>
                     </div>
                   </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-              <div class="col-sm-12">
-                <div class="panel panel-success">
-                  <div class="panel-body">
-                    <%if @patient.document_file_name != nil %>
-                      <iframe src="<%= @patient.document %>" width="1150" height="1000"></iframe>
-                    <%else%>
-                      <p class="text-center"><font size="4" >There is no file attached to this investisseur</font></p>
-                    <%end%>
+        
+     
+   
+  
+  
+ 
+                  <!-- Collapsable Card Example -->
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample2">
+                      <h6 class="m-0 font-weight-bold text-primary">Consultation</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse show" id="collapseCardExample2">
+                      <div class="card-body">      
+                        <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                          <tr>
+                            <th>Doctor</th>
+                            <th>Specialite</th>
+                            <th>Patient</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Avis</th>
+                            <th>Show</th> 
+                            <th>Delete</th>    
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <% @acha_pros.each { |s| %>
+                              <tr>
+                                <td><%= s.doctor_name %></td>
+                                <td><%= s.doctor.specialist %></td>
+                                <td><%= s.patient_name %></td>
+                                <td><%= s.doctor.city %></td>
+                                <td><%= s.doctor.address %></td>
+                                <td><%= s.avis %></td>
+                                <td><%= link_to '', s.doctor ,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
+                                <td><%= link_to '', "/patients/#{params[:id]}/delete_consulting/#{s.id};", data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
+                                
 
+                              </tr>                                 
+                          <% } %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>                    
+                 </div>
+
+
+
+
+
+
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-                  </div>
-                </div>
-              </div>
-      </div>
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+
+
+
+
+
+

@@ -1,39 +1,150 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @doctor.name %>
-</p>
+<div class="card">
 
-<p>
-  <strong>Date of birth:</strong>
-  <%= @doctor.date_of_birth %>
-</p>
+    <div class="card-body">
+     <h1> <%= @doctor.name%> </h1>
+      <hr>
+<%= link_to '', edit_doctor_path(@doctor),class:"fas fa-tv fa-2x  btn-primary btn-lg" %> |
+<%= link_to '', doctors_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @doctor.sex %>
-</p>
+<br>
+      <hr>
 
-<p>
-  <strong>Specialist:</strong>
-  <%= @doctor.specialist %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @doctor.address %>
-</p>
+    <br>
 
-<p>
-  <strong>City:</strong>
-  <%= @doctor.city %>
-</p>
+<!-- Content Row -->
 
-<p>
-  <strong>Country:</strong>
-  <%= @doctor.country %>
-</p>
+          <div class="row">
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+            <!-- Area Chart -->
+            <div class="col-xl-9 col-lg-8">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Name</i>
+                    </span>
+                    <span class="text"><%= @doctor.name %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Date of birth</i>
+                    </span>
+                    <span class="text"><%= @doctor.date_of_birth %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Sex</i>
+                    </span>
+                    <span class="text"><%= @doctor.sex %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Specialist:</i>
+                    </span>
+                    <span class="text"><%= @doctor.specialist %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Address</i>
+                    </span>
+                    <span class="text"><%= @doctor.address %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>City</i>
+                    </span>
+                    <span class="text"><%= @doctor.city %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Country</i>
+                    </span>
+                    <span class="text"><%= @doctor.country %></span>
+                  </a>
+</div>
+
+</div>
+
+
+
+<!-- Collapsable Card Example -->
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample2">
+                      <h6 class="m-0 font-weight-bold text-primary">Consultation</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="collapse show" id="collapseCardExample2">
+                      <div class="card-body">      
+                        <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                          <tr>
+                            <th>Patient</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Avis</th>
+                            <th>Show</th> 
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <% @acha_pros.each { |s| %>
+                              <tr>
+                                <td><%= s.patient_name %></td>
+                                <td><%= s.patient.city %></td>
+                                <td><%= s.patient.address %></td>
+                                <td><%= s.avis %></td>
+                                <td><%= link_to '', s.patient ,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
+                                
+
+                              </tr>                                 
+                          <% } %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>                    
+                 </div>
+
+
+
+
+
+
+          
+        </div>
+        </div>
+
+
+
+       

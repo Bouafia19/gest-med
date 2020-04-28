@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: [:show, :edit, :update, :destroy, :add_consulting]
 
   # GET /patients
   # GET /patients.json
@@ -14,6 +14,9 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
+    @cont_sel = @patient.consultings
+    @acha_pros = @patient.consultings
+    @patient = Patient.find(params[:id])
   end
 
   # GET /patients/new
@@ -61,6 +64,36 @@ class PatientsController < ApplicationController
     @patient.destroy
     respond_to do |format|
       format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def add_consulting
+    @pro = Consulting.new
+    @pro.doctor_id = params[:doctor_id]
+
+    @pros = Doctor.find(params[:doctor_id])
+    @pro.doctor_name = @pros.name
+    
+    @pro.avis = params[:avis]
+    @pro.patient_id = @patient.id
+    @pro.patient_name = @patient.name
+    if @pro.save!
+      flash[:notice] = 'Avis enregistré avec succes.'
+      redirect_to :action => :show, :id => params[:id]
+    else
+      flash[:error] = "Une erreur s'est produite."
+      redirect_to :action => :show, :id => params[:id]
+    end
+  end
+
+  def delete_consulting
+    @pro = Consulting.find(params[:doctor_id])
+
+   
+    @pro.destroy
+    respond_to do |format|
+      format.html { redirect_to patient_url(params[:id]), notice: 'consultation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

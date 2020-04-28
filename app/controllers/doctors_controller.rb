@@ -15,6 +15,9 @@ class DoctorsController < ApplicationController
   # GET /doctors/1
   # GET /doctors/1.json
   def show
+    @cont_sel = @doctor.consultings
+    @acha_pros = @doctor.consultings
+    @doctor = Doctor.find(params[:id])
   end
 
   
@@ -67,6 +70,8 @@ class DoctorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
