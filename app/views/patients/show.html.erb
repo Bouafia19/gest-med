@@ -1,13 +1,13 @@
 <div class="card">
 
     <div class="card-body">
-     <h1> <%= @patient.name%> </h1>
+     <h1>Patient: <%= @patient.name%> </h1>
       <hr>
           <%= link_to '', edit_patient_path(@patient) ,class:"fas fa-tv fa-2x  btn-primary btn-lg"%> |
           <%= link_to '', patients_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> |
           <a class="fa fa-medkit fa-2x  btn-info btn-lg" data-toggle="modal" href="#betaModal"></a>
                   <div id="betaModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-sm">
                       <div class="modal-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
@@ -15,7 +15,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <div class="row">
+                          
 
                     <%= form_tag(patients_add_consulting_url, {:method => :post}) do %>
                         <%= hidden_field_tag :id, @patient.id %>
@@ -32,7 +32,7 @@
                           <%= submit_tag 'Create', class: 'btn btn-success' %>
                         </div>
                     <% end %>
-                  </div>
+                  
                         </div>
                         <!-- Modal footer -->
                   <div class="modal-footer">
@@ -120,7 +120,7 @@
                     <div class="collapse show" id="collapseCardExample1">
                       <div class="card-body">
                         <%if @patient.document_file_name != nil %>
-                          <iframe src="<%= @patient.document %>" width="1150" height="1000"></iframe>
+                          <iframe src="<%= @patient.document %>" width="1550" height="1000"></iframe>
                         <%else%>
                           <p class="text-center"><font size="4" >There is no file attached to this patient</font></p>
                         <%end%>
@@ -147,9 +147,10 @@
                           <tr>
                             <th>Doctor</th>
                             <th>Specialite</th>
-                            <th>Patient</th>
                             <th>City</th>
                             <th>Address</th>
+                            <th>Patient</th>
+                            
                             <th>Avis</th>
                             <th>Show</th> 
                             <th>Delete</th>    
@@ -160,9 +161,10 @@
                               <tr>
                                 <td><%= s.doctor_name %></td>
                                 <td><%= s.doctor.specialist %></td>
-                                <td><%= s.patient_name %></td>
                                 <td><%= s.doctor.city %></td>
                                 <td><%= s.doctor.address %></td>
+                                <td><%= s.patient_name %></td>
+                                
                                 <td><%= s.avis %></td>
                                 <td><%= link_to '', s.doctor ,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
                                 <td><%= link_to '', "/patients/#{params[:id]}/delete_consulting/#{s.id};", data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
