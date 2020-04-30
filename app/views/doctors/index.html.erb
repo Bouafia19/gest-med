@@ -105,7 +105,9 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <%= pie_chart Doctor.group(:city).count %>
+                  <%= pie_chart Doctor.group(:city).count, donut: true %>
+                  <hr>
+                  <%= bar_chart Doctor.group(:specialist).count %>
                 </div>
               </div>
             </div>

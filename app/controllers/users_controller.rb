@@ -4,12 +4,26 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if can? :update, @users
+      @users = User.all
+    else
+      
+      redirect_to :root
+      flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
+    end
+    
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    
+    if can? :update, @user
+      
+    else
+      @user = User.find(@user.id == current_user.id)
+      
+    end
   end
 
   def change_passd

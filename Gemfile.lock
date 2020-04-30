@@ -55,6 +55,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
+    cancancan (3.1.0)
     capistrano (3.12.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -266,6 +267,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  cancancan
   capistrano (~> 3.11)
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.4)
