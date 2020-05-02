@@ -1,9 +1,6 @@
 <div class="col-md-12">
-<title>My First Leaflet Map</title>
 
-<meta charset=utf-8 />
-<title>Searching feature layers</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
 
 <!-- Load Leaflet from CDN -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
@@ -23,65 +20,33 @@
         integrity="sha512-uK5jVwR81KVTGe8KpJa1QIN4n60TsSV8+DPbL5wWlYQvb0/nYNgSOg9dZG6ViQhwx/gaMszuWllTemL+K+IXjg=="
         crossorigin=""></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-<style>
-  .chart-container {
-    height: 245px;
-    width: 245px;
-  }
-
-  #info-pane {
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    z-index: 400;
-    padding: 1em;
-    background: white;
-  }
-</style>
-
-<style>
-  body { margin:0; padding:0; }
-  #map { position: absolute; top:0; bottom:0; right:0; left:0; }
-</style>
-
-
-<style>
-  #map { height: 800px; }
-</style>
-
-
-
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-      crossorigin=""/>
-<link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw.css" />
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.rawgit.com/mejackreed/Leaflet-IIIF/v2.0.1/leaflet-iiif.js"></script>
-<script src="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw.js"></script>
-
-<script src="https://npmcdn.com/leaflet-geometryutil"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.css">
-<script src="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.js"></script>
-
-
-<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-
-<%= stylesheet_link_tag "lib/leaflet-search.css" %>
-<%= javascript_include_tag('lib/leaflet-search.js') %>
 
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
 <%= javascript_include_tag('lib/leaflet.ajax.min.js') %>
+
+<%= javascript_include_tag('lib/L.Control.Locate.min.js') %>
+<%= stylesheet_link_tag "lib/L.Control.Locate.min.css" %>
+
+<%= stylesheet_link_tag "lib/Control.Coordinates.css" %>
+<%= javascript_include_tag('lib/Control.Coordinates.js') %>
+
+<%= javascript_include_tag('lib/leaflet.browser.print.min.js') %>
+
+<%= stylesheet_link_tag "lib/leaflet-search.css" %>
+<%= javascript_include_tag('lib/leaflet-search.js') %>
+
+<%= stylesheet_link_tag "lib/leaflet-routing-machine.css" %>
+<%= javascript_include_tag('lib/leaflet-routing-machine.js') %>
+<%= javascript_include_tag('lib/Control.Geocoder.js') %>
+<%= javascript_include_tag('lib/config.js') %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 
   #info-pane {
@@ -97,12 +62,11 @@
 <style>
   body { margin:0; padding:0; }
   #map { position: absolute; top:0; bottom:0; right:0; left:0; }
-</style>
-
-
-<style>
   #map { height: 800px; }
 </style>
+
+
+
 
 <div id="map"></div>
 
@@ -116,7 +80,9 @@
 
   var map = L.map('map',{
       center: [36.1700, 5.5199],
-      zoom: 12
+      zoom: 12,
+      fullscreenControl: true
+      
   });
   var tileUrl = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -130,13 +96,14 @@ function popUp(features,layer) {
 
     }
 
-    
-
-var geojsonda2 = new L.GeoJSON.AJAX('../med.json',{onEachFeature: popUp});
 
 
 
-var cities  = L.layerGroup([geojsonda2]);
+var geojson = new L.GeoJSON.AJAX('../med.json',{onEachFeature: popUp});
+
+
+
+var cities  = L.layerGroup([geojson]);
 
 
 var yes = {
@@ -146,7 +113,7 @@ var yes = {
 
 var geo = {
     
-    "MEDICAL": geojsonda2,
+    "MEDICAL": geojson,
     "ALL": cities
     
 };
@@ -154,16 +121,54 @@ var geo = {
 
 L.control.layers(yes, geo,{position :'topright'}).addTo(map);
 
+L.control.locate().addTo(map);
 
-//L.marker([36.105708, 5.561576]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
+var c = new L.Control.Coordinates({
+        position: 'bottomright',
+
+    });
+
+    c.addTo(map);
+
+    map.on('click', function(e) {
+        c.setCoordinates(e);
+    });
+
+
+  
+
+
+
+L.control.browserPrint().addTo(map);
+
+ 
+
+var control = L.Routing.control(L.extend(window.lrmConfig, {
+	waypoints: [
+		L.latLng(36.1936 , 5.3744),
+		L.latLng(36.2410, 5.5574)
+	],
+	geocoder: L.Control.Geocoder.nominatim(),
+	routeWhileDragging: true,
+	reverseWaypoints: true,
+	showAlternatives: true,
+	altLineOptions: {
+		styles: [
+			{color: 'black', opacity: 0.15, weight: 9},
+			{color: 'white', opacity: 0.8, weight: 6},
+			{color: 'blue', opacity: 0.5, weight: 2}
+		]
+	}
+})).addTo(map);
+
+L.Routing.errorControl(control).addTo(map);
+//L.marker([ 36.6343,  4.6362]).bindPopup('<p>Wilaya<br />Setif</p>').openPopup().addTo(map);
 
 //L.marker([36.763056, 3.050556]).bindPopup('<p>Wilaya<br />Alger</p>').openPopup().addTo(map);
 
 //L.marker([36.365, 6.614722]).bindPopup('<p>Wilaya<br />Constantine</p>').openPopup().addTo(map);
 
 //L.marker([27.870924, -0.285634]).bindPopup('<p>Wilaya<br />Adrar</p>').openPopup().addTo(map);
-
-
 
 
 

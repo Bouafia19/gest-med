@@ -16,3 +16,4 @@
 //= require Chart.bundle
 //= require chartkick
 //= require leaflet
+// = require turf

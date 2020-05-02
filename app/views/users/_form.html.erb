@@ -45,8 +45,13 @@
   <div class="form-group" align="center">
     <%= form.label :role %>
     <%= form.select :role, options_for_select([["Admin","admin"],["Docteur","docteur"],["Patient","patient"]]),{},class:"form-control form-control-lg col-4"%>
-
   </div>
+
+  <div class="form-group" align="center">
+    <%= form.label :deactivated %>
+    <%= form.select :deactivated, options_for_select([["Activer","false"],["Desactiver","true"]]),{},class:"form-control form-control-lg col-4"%>
+  </div>
+
   <div class="form-group" align="center">
     <%= form.label :avatar %>
     <%= form.file_field :avatar ,class:"form-control form-control-lg col-4"%>

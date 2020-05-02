@@ -53,8 +53,9 @@
       <th>Date of birth</th>
       <th>Adress</th>
       <th>Cite</th>
-      <th>Country</th>
+      
       <th>Role</th>
+      <th>Status</th>
       <th></th>
       <th></th>
       <th></th>
@@ -64,16 +65,24 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+      
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.date_of_birth %></td>
         <td><%= user.adress %></td>
         <td><%= user.cite %></td>
-        <td><%= user.country %></td>
+        
         <td><%= user.role %></td>
-        <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-success btn-lg" %></td>
+        <td><%= user.deactivated %></td>
+      <% if user.deactivated != true %>
+        <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
         <td><%= link_to '', edit_user_path(user),class:"fas fa-edit fa-2x btn-primary btn-lg" %></td>
         <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
+      <%else%>
+        <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-secondary btn-lg" %></td>
+        <td><%= link_to '', edit_user_path(user),class:"fas fa-edit fa-2x btn-secondary btn-lg"%></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' },class:"fas fa-lock fa-2x btn-secondary btn-lg"%></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -109,6 +118,8 @@
               </div>
             </div>
           </div>
+
+
 
 
 

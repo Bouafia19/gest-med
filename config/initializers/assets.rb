@@ -36,3 +36,17 @@ Rails.application.config.assets.precompile += %w( js/demo/datatables-demo.js )
 Rails.application.config.assets.precompile += %w( lib/leaflet.ajax.min.js )
 Rails.application.config.assets.precompile += %w( lib/leaflet-search.css )
 Rails.application.config.assets.precompile += %w( lib/leaflet-search.js )
+
+
+Rails.application.config.assets.precompile += %w( lib/L.Control.Locate.min.js )
+Rails.application.config.assets.precompile += %w( lib/L.Control.Locate.min.css )
+
+Rails.application.config.assets.precompile += %w( lib/Control.Coordinates.css )
+Rails.application.config.assets.precompile += %w( lib/Control.Coordinates.js )
+
+Rails.application.config.assets.precompile += %w( lib/leaflet.browser.print.min.js )
+
+Rails.application.config.assets.precompile += %w( lib/leaflet-routing-machine.css )
+Rails.application.config.assets.precompile += %w( lib/leaflet-routing-machine.js )
+Rails.application.config.assets.precompile += %w( lib/Control.Geocoder.js )
+Rails.application.config.assets.precompile += %w( lib/config.js )
