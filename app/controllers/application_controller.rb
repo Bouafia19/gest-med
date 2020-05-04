@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include PublicActivity::StoreController
+  
     before_action :authenticate_user!
     helper_method :mailbox, :conversation
 

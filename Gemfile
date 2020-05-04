@@ -20,6 +20,7 @@ gem "paperclip"
 gem 'mailboxer'
 gem 'geocoder'
 gem 'turf-rails'
+gem 'public_activity'
 #gem "shrine"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

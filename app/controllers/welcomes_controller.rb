@@ -5,4 +5,5 @@ class WelcomesController < ApplicationController
 
   def leaflet
   end
+
 end

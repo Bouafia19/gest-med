@@ -4,10 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  
 
   def destroy
     update_attributes(deactivated: true) unless deactivated
   end
+
+  
 
   def active_for_authentication?
     super && !deactivated

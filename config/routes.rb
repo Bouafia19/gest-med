@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
+  
   get 'doctors/search'
   get 'patients/search'
+  resources :activities
   resources :doctors
   resources :patients
   root 'welcomes#index'
