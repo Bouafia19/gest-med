@@ -1,9 +1,10 @@
-<div class="card">
+<div class="card ">
   <div class="card-body ">
-    <div class="card-header">
-        <h1 style="color: #17a2b8" align="center">Nouvel utilisateur</h1>
+    <div class="card-header ">
+        <h1 style="color: #17a2b8" align="center">Nouveau Utilisateur</h1>
     </div>
-        <hr>
+    
+       <br>
         <%= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg" %>
         <hr>
 
@@ -24,61 +25,60 @@
           <% end %>
           <br>
           <div class="form-group" align="center">
-            <%= f.label :nom %>
+            <%= f.label :Nom_et_Prenom %>
             <%= f.text_field :name, id: :user_name ,class:"form-control form-control-lg col-4"%>
           </div>
           
           <div class="form-group" align="center">
-            <%= f.label :email %>
+            <%= f.label :Email %>
             <%= f.text_field :email, id: :user_email ,class:"form-control form-control-lg col-4"%>
           </div>
           
           <div class="form-group" align="center">
-            <%= f.label :password %>
+            <%= f.label :Mot_de_passe %>
             <%= f.password_field :password, autocomplete: "current-password",class:"form-control form-control-user col-4" %>
           </div>
 
           <div class="form-group" align="center">
-            <%= f.label :date_of_birth %>
+            <%= f.label :Date_de_naissance %>
             <%= f.date_field :date_of_birth ,class:"form-control form-control-lg col-4"%>
           </div>
 
             <div class="form-group" align="center">
-              <%= f.label :adress %>
+              <%= f.label :Adress %>
               <%= f.text_area :adress ,class:"form-control form-control-lg col-4"%>
             </div>
 
             <div class="form-group" align="center">
-              <%= f.label :country %>
+              <%= f.label :Pays %>
               <%= f.text_field :country ,class:"form-control form-control-lg col-4" %>
             </div>
 
             <div class="form-group" align="center">
-              <%= f.label :cite %>
+              <%= f.label :Wilayas %>
               <%= f.select :cite ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","Oran"]]),{},class:"form-control form-control-lg col-4" %>
             </div>
 
             
 
           <div class="form-group" align="center">
-            <%= f.label :role %>
+            <%= f.label :Role %>
             <%= f.select :role, options_for_select([["Admin","admin"],["Docteur","docteur"],["Patient","patient"]]),{},class:"form-control form-control-lg col-4"%>
           </div>
 
           <div class="form-group" align="center">
-            <%= f.label :avatar %>
+            <%= f.label :Photo_de_profile  %>
             <%= f.file_field :avatar ,class:"form-control form-control-lg col-4"%>
           </div>
           
           <hr>
           <div class="form-group" align="center">
-            <%= f.submit class:"btn btn-success btn-user btn-block col-4" %>
+            <%= f.submit "Sauvegarder L'utilisateur" ,class:"btn btn-success btn-user btn-block col-4" %>
           </div>
           
 
         <% end %>
-
+       
       </div>
     </div>
-  </div>
-</div>
+ 

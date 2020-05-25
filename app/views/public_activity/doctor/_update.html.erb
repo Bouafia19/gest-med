@@ -1,0 +1,12 @@
+<div class="alert alert-primary alert-dismissible" >
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+<%= link_to activity.owner.name, activity.owner if activity.owner %>
+à modifier le docteur
+<% if activity.trackable %>
+
+  <%= link_to activity.trackable.name, activity.trackable %>
+<% else %>
+  which has since been removed
+<% end %>
+<%= activity.updated_at %>
+</div>

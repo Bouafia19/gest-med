@@ -33,12 +33,12 @@
 
   <div class="form-group" align="center">
     <%= form.label :city %>
-    <%= form.text_field :city ,class:"form-control form-control-lg col-4"%>
+    <%= form.select :city, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
 
   <div class="form-group" align="center">
     <%= form.label :country %>
-    <%= form.text_field :country ,class:"form-control form-control-lg col-4"%>
+    <%= form.select :country, options_for_select(CS.countries.map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
 
   <div class="form-group" align="center">

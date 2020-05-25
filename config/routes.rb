@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :users
   
   
-
+  get 'cities/:state', to: 'application#cities'
+  
   get 'welcomes/leaflet'
   devise_for :users ,only: :session , path: 'session',path_name: {sign_in:'login',sign_out: 'logout'}
   get   'users/change_passd/:id', to: 'users#change_passd'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
     end
   end
   
+
   get "*path", to: redirect("/404")
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

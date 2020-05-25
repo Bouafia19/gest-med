@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-   
+   <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
   <!-- Custom fonts for this template-->
   <%= stylesheet_link_tag "vendor/fontawesome-free/css/all.min.css" %>
@@ -78,7 +78,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
-            <%= link_to "SIG", welcomes_leaflet_path ,class:"collapse-item"%>
+            <%= link_to "Carte Docteur", welcomes_leaflet_path ,class:"collapse-item"%>
             
           </div>
         </div>
@@ -255,16 +255,19 @@
                 <h6 class="dropdown-header">
                   Message Center
                 </h6>
+                <%# @receipts.each do |receipt| %>
+                    <%# message = receipt.message %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                    <div class="text-truncate"><%#= message.body %></div>
+                    <div class="small text-gray-500"><%#= message.sender.name %> · <%#=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
                   </div>
                 </a>
+                <%# end %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">

@@ -1,39 +1,38 @@
 
 
-<div class="card">
+
+
+  <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-12 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+          <div class="card">
   <div class="card-body">
     <div class="card-header">
         
-        <h1 align="center"> <%= @user.name%> </h1>
+        <h1 style="color: #17a2b8" align="center">L'utilisateur <br> <%= @user.name%> </h1>
     </div>
-    <div class="panel-body">
-        <hr>
+    
+        <br>
         <%= link_to '', edit_user_path(@user),class:"fas fa-edit fa-2x btn-primary btn-lg" %> |
         <%#= link_to '', users_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%> 
         <%= link_to '', "change_passd/#{@user.id}" ,class:"fas fa-pen-nib fa-2x  btn-danger btn-lg"%>
         <hr>
-
-<div class="row">
-<div class="col-xl-3 col-md-3 mb-3">
-      <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Photo</div>
-                    <%= image_tag @user.avatar.url(:medium) ,class:"card-img-top"%>
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <%= image_tag @user.avatar.url(:medium),class:"col-lg-5 d-none d-lg-block" %> 
+              <div class="col-lg-7">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Fiche Technique</h1>
                   </div>
-                </div>
-            </div>
-          </div>
-</div>
-
-
-        <div class="col-xl-3 col-md-3 mb-">
-          <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
+<div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nom</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nom et Prenom</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.name %></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email</div>
@@ -42,40 +41,39 @@
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Role</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.role %></div>
                   <hr>
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Date of birth</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Date de naissance</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.date_of_birth %></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Adress</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.adress %></div>
                   <hr>
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Cite</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Wilaya</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.cite %></div>
                   <hr>
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Country</div>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">pays</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.country %></div>
                 </div>
                 
               </div>
             </div>
+<hr>
+
+             
+          
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+      </div>
+
+    </div>
+
        
 
 
       
-    
-      
-     
-     
-        
-      
-
-     
-      
-    
-
-    
-      
-   
  </div>
 
       
@@ -89,6 +87,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+  
 
 
 

@@ -33,6 +33,8 @@ class ConversationsController < ApplicationController
       redirect_to conversation_path(conversation)
     end
   
+   
+
     private
   
     def message_params
