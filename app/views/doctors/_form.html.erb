@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="form-group" align="center">
-    <%= form.label :name %>
+    <%= form.label :Nom_et_Prenom %>
     <%= form.text_field :name ,class:"form-control form-control-lg col-4"%>
   </div>
 
   <div class="form-group" align="center">
-    <%= form.label :date_of_birth %>
+    <%= form.label :Date_naissance %>
     <%= form.date_field :date_of_birth ,class:"form-control form-control-lg col-4"%>
   </div>
 
   <div class="form-group" align="center">
-    <%= form.label :sex %>
+    <%= form.label :sexe %>
     <%= form.text_field :sex ,class:"form-control form-control-lg col-4"%>
   </div>
 
   <div class="form-group" align="center">
-    <%= form.label :specialist %>
+    <%= form.label :Spécialité %>
     <%= form.text_field :specialist ,class:"form-control form-control-lg col-4"%>
   </div>
 
@@ -39,19 +39,19 @@
 
 
   <div class="form-group" align="center">
-    <%= form.label :city %>
+    <%= form.label :Wilayas %>
     <%# form.text_field :city ,class:"form-control form-control-lg col-4"%>
     <%= form.select :city, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
 
   <div class="form-group" align="center">
-    <%= form.label :country %>
+    <%= form.label :Pays %>
     <%# form.text_field :country ,class:"form-control form-control-lg col-4"%>
     <%= form.select :country, options_for_select(CS.countries.map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
-
+<hr>
   <div class="form-group" align="center">
-    <%= form.submit class:"btn btn-primary btn-user btn-block col-4"%>
+    <%= form.submit "Sauvegarder Médecin" ,class:"btn btn-primary btn-user btn-block col-4"%>
   </div>
 <% end %>
 

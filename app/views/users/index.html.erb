@@ -112,8 +112,9 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                   <%= pie_chart User.group(:role).count %>
-                  
+                   <%= pie_chart User.group(:role).count, donut: true %>
+                  <hr>
+                  <%= bar_chart User.group(:cite).count %>
                 </div>
               </div>
             </div>

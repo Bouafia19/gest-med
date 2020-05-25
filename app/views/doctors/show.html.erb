@@ -2,10 +2,12 @@
 <div class="card">
 
     <div class="card-body">
-     <h1>Doctor: <%= @doctor.name%> </h1>
-      <hr>
-<%= link_to '', edit_doctor_path(@doctor),class:"fas fa-tv fa-2x  btn-primary btn-lg" %> |
-<%= link_to '', doctors_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
+    <div class="card-header">
+     <h1 style="color: #17a2b8" align="center">Le médecin <br> <%= @doctor.name%> </h1>
+     </div>
+      <br>
+<%= link_to '', edit_doctor_path(@doctor),class:"fas fa-tv fa-2x  btn-primary btn-lg" %> 
+<%#= link_to '', doctors_path ,class:"fas fa-arrow-left fa-2x  btn-warning btn-lg"%>
 
 <br>
       <hr>
@@ -22,7 +24,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Fiche Technique Médecin</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -41,7 +43,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>Name</i>
+                      <i>Nom Prenom</i>
                     </span>
                     <span class="text"><%= @doctor.name %></span>
                   </a>
@@ -49,7 +51,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>Date of birth</i>
+                      <i>Date naissance</i>
                     </span>
                     <span class="text"><%= @doctor.date_of_birth %></span>
                   </a>
@@ -57,7 +59,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>Sex</i>
+                      <i>Sexe</i>
                     </span>
                     <span class="text"><%= @doctor.sex %></span>
                   </a>
@@ -65,7 +67,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>Specialist:</i>
+                      <i>Spécialité</i>
                     </span>
                     <span class="text"><%= @doctor.specialist %></span>
                   </a>
@@ -81,7 +83,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>City</i>
+                      <i>Wilaya</i>
                     </span>
                     <span class="text"><%= @doctor.city %></span>
                   </a>
@@ -89,7 +91,7 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
-                      <i>Country</i>
+                      <i>Pays</i>
                     </span>
                     <span class="text"><%= @doctor.country %></span>
                   </a>
@@ -103,7 +105,7 @@
                   <div class="card shadow mb-4">
                     <!-- Card Header - Accordion -->
                     <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample2">
-                      <h6 class="m-0 font-weight-bold text-primary">Consultation</h6>
+                      <h6 class="m-0 font-weight-bold text-primary">Consultations</h6>
                     </a>
                     <!-- Card Content - Collapse -->
                     <div class="collapse show" id="collapseCardExample2">
@@ -112,10 +114,10 @@
                           <thead>
                           <tr>
                             <th>Patient</th>
-                            <th>City</th>
+                            <th>Wilaya</th>
                             <th>Address</th>
                             <th>Avis</th>
-                            <th>Show</th> 
+                            <th>Voir</th> 
                           </tr>
                           </thead>
                           <tbody>

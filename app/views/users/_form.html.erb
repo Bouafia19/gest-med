@@ -12,52 +12,51 @@
     </div>
   <% end %>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Nom_et_Prenom %>
-    <%= form.text_field :name ,class:"form-control form-control-lg col-6"%>
+    <%= form.text_field :name ,class:"form-control form-control-lg col-4"%>
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Email %>
-    <%= form.text_field :email,class:"form-control form-control-lg col-6"  %>
+    <%= form.text_field :email,class:"form-control form-control-lg col-4"  %>
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Date_de_naissance %>
-    <%= form.date_field :date_of_birth ,class:"form-control form-control-lg col-6"%>
+    <%= form.date_field :date_of_birth ,class:"form-control form-control-lg col-4"%>
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Adress %>
-    <%= form.text_area :adress ,class:"form-control form-control-lg col-6"%>
+    <%= form.text_area :adress ,class:"form-control form-control-lg col-4"%>
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Wilayas %>
-    <%= form.select :cite, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-6" %>
+    <%= form.select :cite, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
 
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Pays %>
-    <%= form.select :country, options_for_select(CS.countries.map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-6" %>
+    <%= form.select :country, options_for_select(CS.countries.map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
 
-  <div class="form-group" >
+  <div class="form-group" align="center">
     <%= form.label :Role %>
-    <%= form.select :role, options_for_select([["Admin","admin"],["Docteur","docteur"],["Patient","patient"]]),{},class:"form-control form-control-lg col-6"%>
+    <%= form.select :role, options_for_select([["Admin","admin"],["Docteur","docteur"],["Patient","patient"]]),{},class:"form-control form-control-lg col-4"%>
   </div>
 
-  <div class="form-group">
-    <%= form.label :Etat_d_activation %>
-    <%= form.select :deactivated, options_for_select([["Activer","false"],["Desactiver","true"]]),{},class:"form-control form-control-lg col-6"%>
+  <div class="form-group" align="center">
+    <%= form.label :Etat_de_compte %>
+    <%= form.select :deactivated, options_for_select([["Activer","false"],["Desactiver","true"]]),{},class:"form-control form-control-lg col-4"%>
   </div>
 
-  <div class="form-group">
-    
+  <div class="form-group" align="center">
     <%= image_tag @user.avatar.url(:medium), style: 'height:100%;width:auto;' %>
     <%= form.label :Photo_de_profile %>
-    <%= form.file_field :avatar ,class:"form-control form-control-lg col-6 "%>
+    <%= form.file_field  :avatar ,class:"form-control form-control-lg col-4 "%>
   </div>
 
   <hr>
