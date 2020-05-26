@@ -20,19 +20,19 @@
             <%= form_tag patients_search_path, method: :get do %>
               <div class="row">
 
-                <div class="col-sm align-self-start"  >
+                <div class="col-xl-12 col-md-6 mb-4 res align-self-start"  >
                   <%#= label_tag 'Wilayas' , nil ,class: 'mr-sm-2' %>
                   <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control", required: true}%>
                 </div>
 
-                <div class="col-sm align-self-center">
+                <div class="col-xl-12 col-md-6 mb-4 res align-self-center">
                   <%#= label_tag 'Sexe' , nil ,class: 'mr-sm-2' %>
                   <%= select_tag :sex, options_for_select(Patient.all.map{|u| [u.sex ] }.uniq),{prompt: "sex",class:"form-control form-control", required: true} %>
                 </div>
 
                 
         
-                <div class="col-sm align-self-end">
+                <div class="col-xl-12 col-md-6 mb-4 res align-self-end">
                   <%= submit_tag "Chercher Patients ",class:"btn btn-md btn-success" %>
                 </div>
             <% end %>
@@ -48,10 +48,10 @@
   </div>
 
   <div class="row" id="table_search" style="padding: 10px">
-
+     
   <% @patien.each do |pat| %>
 
-    <div class="card text-center border-info shadow h-100 py-2 col-6">
+    <div class="card text-center border-info shadow h-100 py-2 col-lg-6 mb-4">
       <div class="card border-info shadow h-100 py-2">
       <div class="card-header">
         <strong style="color: #17a2b8" align="center">Patient: <%= pat.name %></strong>
