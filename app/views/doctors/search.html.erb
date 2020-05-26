@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Recherche Avancée</h1>
@@ -15,27 +15,28 @@
     <div class="collapse show" id="collapseCardExample">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
+          
 
-            <%= form_tag doctors_search_path, method: :get do %>
-              <div class="row">
+            <%= form_tag doctors_search_path, class:"form-inline" , method: :get do %>
+              
 
-                <div class="col-sm-2 align-self-start"  >
-                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control", required: true}%>
+                <div class="form-group align-self-start"  >
+                  <%= label_tag 'Wilayas' , nil ,class: 'mr-sm-2' %>
+                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control ", required: true}%>
                 </div>
-
-                <div class="col-sm-2 align-self-center">
-                  <%= select_tag :specialist, options_for_select(Doctor.all.map{|u| [u.specialist ] }.uniq),{prompt: "specialist",class:"form-control", required: true} %>
+                &nbsp;
+                <div class="form-group align-self-center">
+                  <%= label_tag :Spécialité, nil ,class: 'mr-sm-2'%>
+                  <%= select_tag :specialist, options_for_select(Doctor.all.map{|u| [u.specialist ] }.uniq),{prompt: "Spécialité",class:"form-control form-control", required: true} %>
                 </div>
-
+                &nbsp;
+                <div class="form-group align-self-end">
+                  <%= submit_tag "Chercher Doctors ",class:"btn btn-primary btn-user btn-block" %>
+                </div>
                 
-        
-                <div class="col-sm-2 align-self-end">
-                  <%= submit_tag "Chercher Doctors ",class:"btn btn-md btn-success" %>
-                </div>
             <% end %>
-            </div>
-          </div>
+           
+          
         </div>
         
 
@@ -51,18 +52,21 @@
 
     <div class="card text-center border-info shadow h-100 py-2 col-4">
       <div class="card border-info shadow h-100 py-2">
-      <div class="card-header bg-info">
-        <strong>Dr: <%= doc.name %></strong>
+      <div class="card-header">
+        <strong style="color: #17a2b8" align="center">Dr. <%= doc.name %></strong>
       </div>
 
           <div class="card-body">
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Wilaya: <%= doc.city %></li>
-          <li class="list-group-item">specialist: <%= doc.specialist %></li>
-          
-
-        </ul>
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Wilaya</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= doc.city %></div>
+                  <hr>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">specialist</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= doc.specialist %></div>
+                  <hr>
+                </div>
+            </div>
         <br>
         <%= link_to 'Fiche Technique', doc ,class:"btn btn-success col-4"%>
       </div>
@@ -71,4 +75,4 @@
     </div>
   <% end %>
 
-  <br></div>
+  <br>

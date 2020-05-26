@@ -1,8 +1,7 @@
-<div class="container-fluid">
+
 
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Recherche Avancée</h1>
-  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
 
 <div class="col-xl-12 col-md-6 mb-4 res">
@@ -16,29 +15,31 @@
     <div class="collapse show" id="collapseCardExample">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
+          <div class="col mr">
 
             <%= form_tag patients_search_path, method: :get do %>
               <div class="row">
 
-                <div class="col-sm-2 align-self-start"  >
-                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control", required: true}%>
+                <div class="col-sm align-self-start"  >
+                  <%#= label_tag 'Wilayas' , nil ,class: 'mr-sm-2' %>
+                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control", required: true}%>
                 </div>
 
-                <div class="col-sm-2 align-self-center">
-                  <%= select_tag :sex, options_for_select(Patient.all.map{|u| [u.sex ] }.uniq),{prompt: "sex",class:"form-control", required: true} %>
+                <div class="col-sm align-self-center">
+                  <%#= label_tag 'Sexe' , nil ,class: 'mr-sm-2' %>
+                  <%= select_tag :sex, options_for_select(Patient.all.map{|u| [u.sex ] }.uniq),{prompt: "sex",class:"form-control form-control", required: true} %>
                 </div>
 
                 
         
-                <div class="col-sm-2 align-self-end">
+                <div class="col-sm align-self-end">
                   <%= submit_tag "Chercher Patients ",class:"btn btn-md btn-success" %>
                 </div>
             <% end %>
             </div>
           </div>
         </div>
-        <hr>
+       
 
 
         
@@ -52,18 +53,22 @@
 
     <div class="card text-center border-info shadow h-100 py-2 col-6">
       <div class="card border-info shadow h-100 py-2">
-      <div class="card-header bg-info">
-        <strong>Patient name: <%= pat.name %></strong>
+      <div class="card-header">
+        <strong style="color: #17a2b8" align="center">Patient: <%= pat.name %></strong>
       </div>
 
           <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Wilaya</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= pat.city %></div>
+                  <hr>
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sexe</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= pat.sex %></div>
+                  <hr>
+                </div>
+            </div>
 
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">city: <%= pat.city %></li>
-          <li class="list-group-item">sex: <%= pat.sex %></li>
-          
-
-        </ul>
         <br>
         <%= link_to 'Fiche Technique', pat ,class:"btn btn-success col-4"%>
       </div>
@@ -72,4 +77,4 @@
     </div>
   <% end %>
 
-  <br></div>
+  <br>
