@@ -3,7 +3,7 @@
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Recherche Avancée</h1>
 
-
+<br>
 <div class="col-xl-12 col-md-6 mb-4 res">
   <!-- Collapsable Card Example -->
   <div class="card shadow mb-4">
@@ -22,18 +22,18 @@
 
                 <div class="col-xl-4 col-md-6 mb-4 align-self-start"  >
                   <%#= label_tag 'Wilayas' , nil ,class: 'mr-sm-2' %>
-                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control", required: true}%>
+                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control"}%>
                 </div>
 
                 <div class="col-xl-4 col-md-6 mb-4 align-self-center">
                   <%#= label_tag 'Sexe' , nil ,class: 'mr-sm-2' %>
-                  <%= select_tag :sex, options_for_select(Patient.all.map{|u| [u.sex ] }.uniq),{prompt: "sex",class:"form-control form-control", required: true} %>
+                  <%= select_tag :sex, options_for_select(Patient.all.map{|u| [u.sex ] }.uniq),{prompt: "sex",class:"form-control form-control"} %>
                 </div>
 
                 
         
                 <div class="col-xl-4 col-md-6 mb-4 align-self-end">
-                  <%= submit_tag "Chercher Patients ",class:"btn btn-md btn-success" %>
+                  <%= submit_tag "Chercher Patients ",class:"btn btn-md btn-info" %>
                 </div>
             <% end %>
             </div>
@@ -70,7 +70,7 @@
             </div>
 
         <br>
-        <%= link_to 'Fiche Technique', pat ,class:"btn btn-success"%>
+        <%= link_to 'Voir', pat ,class:"btn btn-info"%>
       </div>
             </div>
 </div>

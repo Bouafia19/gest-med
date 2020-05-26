@@ -23,7 +23,7 @@
 
   <div class="form-group" align="center">
     <%= form.label :sexe %>
-    <%= form.text_field :sex ,class:"form-control form-control-lg col-4"%>
+    <%= form.select :sex,options_for_select([["Homme","H"],["Femme","F"]]),{} ,class:"form-control form-control-lg col-4"%>
   </div>
 
   <div class="form-group" align="center">
