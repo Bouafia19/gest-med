@@ -49,8 +49,8 @@
   <div class="row" id="table_search" style="padding: 10px">
 
   <% @doctos.each do |doc| %>
-
-    <div class="card text-center border-info shadow h-100 py-2 col-4">
+<div class="col-xl-4 col-md-6 mb-4">
+    <div class="card text-center border-info shadow h-100 py-2">
       <div class="card border-info shadow h-100 py-2">
       <div class="card-header">
         <strong style="color: #17a2b8" align="center">Dr. <%= doc.name %></strong>
@@ -71,7 +71,7 @@
         <%= link_to 'Fiche Technique', doc ,class:"btn btn-success"%>
       </div>
             </div>
-
+</div>
     </div>
   <% end %>
 
