@@ -40,6 +40,8 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
+                <div class="row">
+                <div class="col">
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
@@ -75,6 +77,22 @@
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
+                      <i>Sous Spécialité</i>
+                    </span>
+                    <span class="text"><%= @doctor.sous_spesialist %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i>Numero d'ordre</i>
+                    </span>
+                    <span class="text"><%= @doctor.num_ordre %></span>
+                  </a>
+
+<div class="my-2"></div>
+                  <a href="#" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
                       <i>Address</i>
                     </span>
                     <span class="text"><%= @doctor.address %></span>
@@ -97,8 +115,12 @@
                   </a>
 </div>
 
+         <div class="col">
+             <%= image_tag @doctor.avatar.url(:medium),class: "img-thumbnail" %>
+         </div>
 </div>
-
+</div>
+</div>
 
 
 <!-- Collapsable Card Example -->
