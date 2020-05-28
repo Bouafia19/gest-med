@@ -56,7 +56,7 @@
 
             <div class="form-group" align="center">
               <%= f.label :Wilayas %>
-              <%= f.select :cite ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","Oran"]]),{},class:"form-control form-control-lg col-4" %>
+              <%= f.select :cite, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
             </div>
 
             

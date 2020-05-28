@@ -18,24 +18,45 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     
-    if can? :update, @user
+    if  @user.id == current_user.id || current_user.role == "admin"
       
     else
-      @user = User.find(@user.id == current_user.id)
       
+      redirect_to :root
+      flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
     end
   end
 
   def change_passd
+    if  @user.id == current_user.id || current_user.role == "admin"
+      
+    else
+      
+      redirect_to :root
+      flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
+    end
   end
   
   # GET /users/new
   def new
+    if can? :update, @users
     @user = User.new
+  else
+      
+    redirect_to :root
+    flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
+  end
   end
 
   # GET /users/1/edit
   def edit
+    if  @user.id == current_user.id || current_user.role == "admin"
+      
+    else
+      
+      redirect_to :root
+      flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
+    end
   end
 
   # POST /users
@@ -45,6 +66,20 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+        @doc = Doctor.new
+        @doc.user_id = @user.id
+        @doc.name = @user.name
+        @doc.city = @user.cite
+        @doc.date_of_birth = @user.date_of_birth
+        @doc.address = @user.adress
+        @doc.country = @user.country
+        if @doc.save!
+          flash[:notice] = 'Médecin enregistré avec succes.'
+        else
+          flash[:error] = "Une erreur s'est produite."
+        end
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

@@ -42,7 +42,7 @@
     <%= form.label :Pays %>
     <%= form.select :country, options_for_select(CS.countries.map { |c| [c[1], c[0]] } ),{},class:"form-control form-control-lg col-4" %>
   </div>
-
+<% if can? :update, @user %>
   <div class="form-group" align="center">
     <%= form.label :Role %>
     <%= form.select :role, options_for_select([["Admin","admin"],["Docteur","docteur"],["Patient","patient"]]),{},class:"form-control form-control-lg col-4"%>
@@ -52,7 +52,7 @@
     <%= form.label :Etat_de_compte %>
     <%= form.select :deactivated, options_for_select([["Activer","false"],["Desactiver","true"]]),{},class:"form-control form-control-lg col-4"%>
   </div>
-
+<% end %>
   <div class="form-group" align="center">
     <%= image_tag @user.avatar.url(:medium), style: 'height:100%;width:auto;' %>
     <%= form.label :Photo_de_profile %>

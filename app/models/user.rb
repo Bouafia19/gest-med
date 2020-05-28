@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  
+  has_one :doctor, foreign_key: "user_id"      
 
   def destroy
     update_attributes(deactivated: true) unless deactivated
