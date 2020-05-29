@@ -122,7 +122,7 @@
                     <div class="collapse show" id="collapseCardExample1">
                       <div class="card-body">
                         <%if @patient.document_file_name != nil %>
-                          <iframe src="<%= @patient.document %>" width="1550" height="1000"></iframe>
+                          <iframe src="<%= @patient.document %>" width="100%" height="1000"></iframe>
                         <%else%>
                           <p class="text-center"><font size="4" >There is no file attached to this patient</font></p>
                         <%end%>

@@ -58,7 +58,7 @@
       
       <th></th>
       <th></th>
-      <th></th>
+      
     </tr>
   </thead>
 
@@ -74,7 +74,7 @@
         
         <td><%= link_to '', doctor ,class:"fas fa-tv fa-2x  btn-success btn-lg"%></td>
         <td><%= link_to '', edit_doctor_path(doctor),class:"fas fa-edit fa-2x btn-primary btn-lg" %></td>
-        <td><%= link_to '', doctor, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%></td>
+        <%#= link_to '', doctor, method: :delete, data: { confirm: 'Are you sure?' } ,class:"fas fa-trash fa-2x btn-danger btn-lg"%>
       </tr>
     <% end %>
   </tbody>
