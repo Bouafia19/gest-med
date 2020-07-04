@@ -6,11 +6,12 @@ class User < ApplicationRecord
 
   has_one :doctor, foreign_key: "user_id"      
 
+  
+  validates :name ,presence: true
+  
   def destroy
     update_attributes(deactivated: true) unless deactivated
   end
-
-  
 
   def active_for_authentication?
     super && !deactivated

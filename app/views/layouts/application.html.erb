@@ -6,9 +6,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', "rails.validations", 'data-turbolinks-track': 'reload' %>
 
    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
   <!-- Custom fonts for this template-->
   <%= stylesheet_link_tag "vendor/fontawesome-free/css/all.min.css" %>
@@ -17,6 +18,7 @@
   <!-- Custom styles for this template-->
   <%= stylesheet_link_tag "css/sb-admin-2.css" %>
   <%= stylesheet_link_tag "vendor/datatables/dataTables.bootstrap4.min.css" %>
+  
   </head>
 
   <body id="page-top">
@@ -255,6 +257,7 @@
                 <h6 class="dropdown-header">
                   Message Center
                 </h6>
+                <%# @receipts ||= mailbox.conversations.find(current_user.id) %>
                 <%# @receipts.each do |receipt| %>
                     <%# message = receipt.message %>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -305,18 +308,20 @@
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
+            <% @doc = Doctor.find_by user_id: current_user%>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email %></span>
-                <img class="img-profile rounded-circle" src="<%= current_user.avatar %>">
+                <img class="img-profile rounded-circle" src="<%= current_user.role == "admin" ? current_user.avatar : @doc.avatar %>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<%= user_path(current_user) %>">
+              
+                <a class="dropdown-item" href="<%= current_user.role == "admin" ? user_path(current_user) : doctor_path(@doc.id) %>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="<%= edit_user_path(current_user) %>">
+                <a class="dropdown-item" href="<%= current_user.role == "admin" ? edit_user_path(current_user) : edit_doctor_path(@doc.id) %>">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Editer Compte
                 </a>
@@ -403,5 +408,11 @@
 <%= javascript_include_tag('datatables/jquery.dataTables.min.js') %>
 <%= javascript_include_tag('datatables/dataTables.bootstrap4.min.js') %>
 <%= javascript_include_tag('js/demo/datatables-demo.js') %>
+
+<%= javascript_include_tag('lib/best_in_place.jquery-ui.js') %>
+<%= javascript_include_tag('lib/best_in_place.js') %>
+<%= javascript_include_tag('lib/best_in_place.purr.js') %>
+<%= javascript_include_tag('lib/jquery.autosize.js') %>
+<%= javascript_include_tag('lib/jquery.purr.js') %>
   </body>
 </html>

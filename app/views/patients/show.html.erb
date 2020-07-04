@@ -21,10 +21,11 @@
 
                     <%= form_tag(patients_add_consulting_url, {:method => :post}) do %>
                         <%= hidden_field_tag :id, @patient.id %>
+                        <!--
                         <div class="form-group">
                           <strong>Médecins:</strong>
-                          <%= select_tag :doctor_id, options_for_select(Doctor.all_except(@cont_sel.map(&:doctor_id)).map { |s| [s.name, s.id] }.compact), { prompt: "select doctor", class: 'form-control',:required => true} %>
-                        </div>
+                          <%#= select_tag :doctor_id, options_for_select(Doctor.all_except(@cont_sel.map(&:doctor_id)).map { |s| [s.name, s.id] }.compact), { prompt: "select doctor", class: 'form-control',:required => true} %>
+                        </div>    -->
                         <div class="form-group">
                           <strong>Avis:</strong>
                           <%= text_area_tag :avis,nil,{class:"form-control" ,placeholder:"Tape avis in here...",:required => true}%>

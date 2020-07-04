@@ -1,4 +1,15 @@
-
+<style>
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+</style>
 <div class="card">
 
     <div class="card-body">
@@ -42,12 +53,13 @@
                 <div class="card-body">
                 <div class="row">
                 <div class="col">
+                
 <div class="my-2"></div>
                   <a href="#" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                       <i>Nom Prenom</i>
                     </span>
-                    <span class="text"><%= @doctor.name %></span>
+                    <span class="text"><%= best_in_place @doctor, :name  %></span>
                   </a>
 
 <div class="my-2"></div>
@@ -63,7 +75,7 @@
                     <span class="icon text-white-50">
                       <i>Sexe</i>
                     </span>
-                    <span class="text"><%= @doctor.sex %></span>
+                    <span class="text"><%= best_in_place @doctor, :sex %></span>
                   </a>
 
 <div class="my-2"></div>
@@ -71,7 +83,17 @@
                     <span class="icon text-white-50">
                       <i>Spécialité</i>
                     </span>
-                    <span class="text"><%= @doctor.specialist %></span>
+                    <span class="text"><%= best_in_place @doctor, :specialist,:as => :select, :collection => [["Allergologie","Allergologie"],["Biologie bactériologie","Biologie bactériologie"],
+    ["Biologie Biochimie","Biologie Biochimie"],["Biologie chimie ","Biologie chimie "],["Biologie virologie","Biologie virologie"],["Cardiologie","Cardiologie"],
+    ["Chirurgie dentaire","Chirurgie dentaire"],["Chirurgie esthétique ","Chirurgie esthétique "],["Chirurgie infantile","Chirurgie infantile"],["Chirurgie maxillo-faciale","Chirurgie maxillo-faciale"],
+    ["Chirurgie Orthopédie","Chirurgie Orthopédie"],["Chirurgie générale ","Chirurgie générale "],["Dermatologie","Dermatologie"],["Diabétologie","Diabétologie"],
+    ["Endocrinologie","Endocrinologie"],["Epidémiologie","Epidémiologie"],["Gastrologie","Gastrologie"],["Gynécologie obstétrique","Gynécologie obstétrique"],
+    ["Hématologie","Hématologie"],["Immunologie","Immunologie"],["Maladies Infectieuses","Maladies Infectieuses"],["Médecine de sport","Médecine de sport"],
+    ["Médecine de travail","Médecine de travail"],["Médecine interne","Médecine interne"],["Médecine légale","Médecine légale"],["Néphrologie","Néphrologie"],
+    ["Neurochirurgie","Neurochirurgie"],["Neurologie","Neurologie"],["O.R.L","O.R.L"],["Oncologie","Oncologie"],
+    ["Ophtalmologie","Ophtalmologie"],["Pédiatrie","Pédiatrie"],["Pneumo-phtisiologie","Pneumo-phtisiologie"],["Psychologie","Psychologie"],
+    ["Radiologie","Radiologie"],["Rééducation fonctionnelle","Rééducation fonctionnelle"],["Rhumatologie","Rhumatologie"],["Sénologie","Sénologie"],
+    ["Urologie","Urologie"]] %></span>
                   </a>
 
 <div class="my-2"></div>
@@ -95,7 +117,7 @@
                     <span class="icon text-white-50">
                       <i>Address</i>
                     </span>
-                    <span class="text"><%= @doctor.address %></span>
+                    <span class="text"><%= best_in_place @doctor, :address,:as => :textarea %></span>
                   </a>
 
 <div class="my-2"></div>
@@ -170,5 +192,11 @@
         </div>
 
 
+<script>
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>
 
-       
+

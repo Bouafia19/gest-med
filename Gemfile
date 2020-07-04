@@ -22,6 +22,9 @@ gem 'geocoder'
 gem 'turf-rails'
 gem 'public_activity'
 gem 'city-state'
+gem 'best_in_place'
+gem 'client_side_validations'
+    
 #gem "shrine"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -41,6 +44,7 @@ gem "chartkick"
 gem 'font-awesome-rails'
 gem 'leaflet-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'capistrano', '~> 3.11'

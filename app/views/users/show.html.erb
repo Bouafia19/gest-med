@@ -1,5 +1,16 @@
 
-
+<style>
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+</style>
 
 
   <!-- Outer Row -->
@@ -29,7 +40,7 @@
                     <h1 class="h4 text-primary mb-4">Photo de profile</h1>
                   </div>
                   <hr>
-              <%= image_tag @user.avatar.url(:medium), height: '100%', width: '100%' %> 
+              <%= image_tag @user.avatar.url(:medium), height: '100%', width: '100%',class: "img-thumbnail" %> 
               </div>
               </div>
               <div class="col-lg-7">
@@ -42,10 +53,10 @@
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nom et Prenom</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.name %></div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= best_in_place @user, :name, :place_holder => "Click me to add content!" %></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.email %></div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= best_in_place @user, :email %></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Role</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.role %></div>
@@ -54,7 +65,7 @@
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.date_of_birth %></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Adress</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.adress %></div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800"><%= best_in_place @user, :adress ,:as => :textarea%></div>
                   <hr>
                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Wilaya</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @user.cite %></div>
@@ -99,7 +110,12 @@
 
 
 
-
+<script>
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>
 
 
 

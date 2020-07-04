@@ -70,10 +70,16 @@ class PatientsController < ApplicationController
 
   def add_consulting
     @pro = Consulting.new
-    @pro.doctor_id = params[:doctor_id]
 
-    @pros = Doctor.find(params[:doctor_id])
-    @pro.doctor_name = @pros.name
+    @doc = Doctor.find_by user_id: current_user
+
+    @pro.doctor_id = @doc.id
+
+    
+    
+
+    #@pros = Doctor.find(params[:doctor_id])
+    @pro.doctor_name = @doc.name
     
     @pro.avis = params[:avis]
     @pro.patient_id = @patient.id

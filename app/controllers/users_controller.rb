@@ -63,25 +63,36 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    #require 'json'
     respond_to do |format|
       if @user.save
+        if @user.role == "docteur"
+          @doc = Doctor.new
+          @doc.user_id = @user.id
+          @doc.name = @user.name
+          @doc.city = @user.cite
+          @doc.date_of_birth = @user.date_of_birth
+          @doc.address = @user.adress
+          @doc.country = @user.country
+          if @doc.save!
+            flash[:notice] = 'Médecin enregistré avec succes.'
+          else
+            flash[:error] = "Une erreur s'est produite."
+          end
 
-        @doc = Doctor.new
-        @doc.user_id = @user.id
-        @doc.name = @user.name
-        @doc.city = @user.cite
-        @doc.date_of_birth = @user.date_of_birth
-        @doc.address = @user.adress
-        @doc.country = @user.country
-        if @doc.save!
-          flash[:notice] = 'Médecin enregistré avec succes.'
-        else
-          flash[:error] = "Une erreur s'est produite."
+        
+
+        # @all = Doctor.all
+         # File.open("public/test.json","w") do |f|
+          #  f.write(@all.to_json)
+         #end
+
         end
+
         UserMailer.welcome_email(@user).deliver_now
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+       
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }

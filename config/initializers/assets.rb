@@ -50,3 +50,12 @@ Rails.application.config.assets.precompile += %w( lib/leaflet-routing-machine.cs
 Rails.application.config.assets.precompile += %w( lib/leaflet-routing-machine.js )
 Rails.application.config.assets.precompile += %w( lib/Control.Geocoder.js )
 Rails.application.config.assets.precompile += %w( lib/config.js )
+
+
+Rails.application.config.assets.precompile += %w( lib/best_in_place.jquery-ui.js )
+Rails.application.config.assets.precompile += %w( lib/best_in_place.js )
+Rails.application.config.assets.precompile += %w( lib/best_in_place.purr.js )
+Rails.application.config.assets.precompile += %w( lib/jquery.autosize.js )
+Rails.application.config.assets.precompile += %w( lib/jquery.purr.js )
+
+Rails.application.config.assets.precompile += %w( rails.validations.js )
