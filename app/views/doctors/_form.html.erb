@@ -1,4 +1,4 @@
-<%= form_with(model: doctor, html: {class: "user"}, :validate => true) do |form| %>
+<%= form_with(model: doctor, local: true, html: {class: "user"}) do |form| %>
   <% if doctor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(doctor.errors.count, "error") %> prohibited this doctor from being saved:</h2>

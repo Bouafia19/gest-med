@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0787e587-63c5-4bdd-8ca5-14cfcbe2940f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gest-med.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gest-med.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/patients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/patients_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/doctors/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/doctors/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/doctors/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/patients/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/patients/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
-    </list>
+    <list default="true" id="0787e587-63c5-4bdd-8ca5-14cfcbe2940f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -37,13 +21,37 @@
     <session id="-1744911722">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
     </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,48 +83,10 @@
     <option name="height" value="780" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="RailsProjectView" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-            </path>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-              <item name="Application" type="1a20d5f2:ApplicationFolderNode" />
-            </path>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-              <item name="Application" type="1a20d5f2:ApplicationFolderNode" />
-              <item name="ApplicationController" type="2b770dde:ControllerClassNode" />
-            </path>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-              <item name="Controllers" type="28580ddf:ControllersFolderNode" />
-            </path>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-              <item name="Layouts" type="8e5d065:LayoutsFolder" />
-            </path>
-            <path>
-              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
-              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
-              <item name="Test::Unit" type="40ce5064:TestUnitTestsFolderNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,11 +121,60 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Application" type="1a20d5f2:ApplicationFolderNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Application" type="1a20d5f2:ApplicationFolderNode" />
+              <item name="ApplicationController" type="2b770dde:ControllerClassNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Controllers" type="28580ddf:ControllersFolderNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Assets" type="f36ffe3d:AssetsTopLevelFolderNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Assets" type="f36ffe3d:AssetsTopLevelFolderNode" />
+              <item name="Javascripts" type="8736b8df:AssetsPredefinedGroupFolderNode" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Layouts" type="8e5d065:LayoutsFolder" />
+            </path>
+            <path>
+              <item name="gest-med" type="52f3b0f7:RailsProjectNode" />
+              <item name="gest-med" type="ca5d24b0:RailsModuleNode" />
+              <item name="Test::Unit" type="40ce5064:TestUnitTestsFolderNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/GESTIONZONE" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -287,16 +306,17 @@
       <updated>1584705485072</updated>
       <workItem from="1584705486893" duration="128000" />
       <workItem from="1592649818744" duration="774000" />
+      <workItem from="1596029990937" duration="50000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="902000" />
+    <option name="totallyTimeSpent" value="952000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="885" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="990" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25506938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -322,5 +342,14 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

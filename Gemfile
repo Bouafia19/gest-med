@@ -19,11 +19,11 @@ gem 'uglifier', '>= 1.3.0'
 gem "paperclip"
 gem 'mailboxer'
 gem 'geocoder'
-gem 'turf-rails'
+#gem 'turf-rails'
 gem 'public_activity'
 gem 'city-state'
 gem 'best_in_place'
-gem 'client_side_validations'
+#gem 'client_side_validations'
     
 #gem "shrine"
 # Use CoffeeScript for .coffee assets and views
