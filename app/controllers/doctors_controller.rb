@@ -35,13 +35,7 @@ class DoctorsController < ApplicationController
 
   # GET /doctors/1/edit
   def edit
-    if  @doctor.user_id == current_user.id || current_user.role == "admin"
-      
-    else
-      
-      redirect_to :root
-      flash[:alert] = "Vous n'avez pas les deroits a acceder ces informations."
-    end
+    
   end
 
   # POST /doctors

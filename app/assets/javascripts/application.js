@@ -13,11 +13,11 @@
 //= require rails-ujs
 //= require jquery
 //= require activestorage
-// require turbolinks
+//= require turbolinks
 //= require Chart.bundle
 //= require chartkick
 //= require leaflet
-// = require turf
+
 
 
 
