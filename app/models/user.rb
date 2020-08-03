@@ -9,7 +9,7 @@ class User < ApplicationRecord
   
   validates :name ,presence: true
   
-  def destroy
+  def deactivate
     update_attributes(deactivated: true) unless deactivated
   end
 

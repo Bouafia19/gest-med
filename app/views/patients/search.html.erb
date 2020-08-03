@@ -22,7 +22,9 @@
 
                 <div class="col-xl-4 col-md-6 mb-4 align-self-start"  >
                   <%#= label_tag 'Wilayas' , nil ,class: 'mr-sm-2' %>
-                  <%= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control"}%>
+                  <%#= select_tag :city ,options_for_select([["Setif","setif"],["Alger","alger"],["Oran","oran"]] ),{prompt: "Select Wilaya",class:"form-control form-control"}%>
+                  <%= select_tag :city, options_for_select(CS.states(:dz).map { |c| [c[1], c[0]] } ),{prompt: "Select Wilaya",class:"form-control "} %>
+
                 </div>
 
                 <div class="col-xl-4 col-md-6 mb-4 align-self-center">

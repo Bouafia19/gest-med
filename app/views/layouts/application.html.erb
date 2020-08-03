@@ -255,13 +255,13 @@
               <!-- Dropdown - Messages -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
-                  Message Center
+                  Boite aux lettres
                 </h6>
                 
                 <% @receipts = current_user.mailbox.inbox.last %>
                 <% if @receipts != nil %>
                     <% message = @receipts.messages.last %>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="<%= conversation_path(@receipts) %>">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="<%= message.sender.avatar %>" alt="">
                     <div class="status-indicator bg-success"></div>
@@ -285,7 +285,7 @@
                 <% end %>
                 
                 
-                <a class="dropdown-item text-center small text-gray-500" href="<%= mailbox_inbox_path %>">Read More Messages</a>
+                <a class="dropdown-item text-center small text-gray-500" href="<%= mailbox_inbox_path %>">Lire plus de messages</a>
               </div>
             </li>
 

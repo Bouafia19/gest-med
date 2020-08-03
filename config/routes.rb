@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'welcomes/leaflet'
   devise_for :users ,only: :session , path: 'session',path_name: {sign_in:'login',sign_out: 'logout'}
   get   'users/change_passd/:id', to: 'users#change_passd'
+
   
   post  'patients/add_consulting', to: 'patients#add_consulting'
   get   'patients/:id/delete_consulting/:doctor_id' , to: 'patients#delete_consulting'

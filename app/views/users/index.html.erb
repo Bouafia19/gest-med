@@ -81,7 +81,7 @@
       <%else%>
         <td><%= link_to '', user,class:"fas fa-tv fa-2x  btn-secondary btn-lg" %></td>
         <td><%= link_to '', edit_user_path(user),class:"fas fa-edit fa-2x btn-secondary btn-lg"%></td>
-        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' },class:"fas fa-lock fa-2x btn-secondary btn-lg"%></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' },class:"fas fa-trash fa-2x btn-secondary btn-lg"%></td>
       <% end %>
       </tr>
     <% end %>
