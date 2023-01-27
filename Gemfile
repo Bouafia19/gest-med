@@ -44,7 +44,7 @@ gem "chartkick"
 gem 'font-awesome-rails'
 gem 'leaflet-rails'
 gem 'jquery-rails'
-gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'jquery-ui-rails', '~> 6.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'capistrano', '~> 3.11'
